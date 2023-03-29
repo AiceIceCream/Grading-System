@@ -1,20 +1,45 @@
-function displaygrade(){
-    let grade = document.querySelector('#grade');
-    let message = document.querySelector('#message');
-    const notExist = grade.value + ": Does not Exist!";
-    const Outstanding = grade.value + ": PASSED! : Outstanding";
-    const Very = grade.value + " : PASSED! : Very Satisfactory";
-    const Satisfactory = grade.value + " : PASSED! : Satisfactory";
-    const Fairly = grade.value + " : PASSED! : Fairly Satisfactory";
-    const Failed = grade.value + " : FAILED! : Did not Meet Expectations";
+function clr(){
+    sub1.value="";
+    sub2.value="";
+    sub3.value="";
+    sub4.value="";
+    sub5.value="";
+    sub6.value="";
+    sub7.value="";
 
+    document.getElementById('name1').innerHTML = "";
+    document.getElementById('name2').innerHTML = "";
+    document.getElementById('description').innerHTML = "";
+}
+function ok(){
+    var s1=(sub1.value)*1;
+    var s2=(sub2.value)*1;
+    var s3=(sub3.value)*1;
+    var s4=(sub4.value)*1;
+    var s5=(sub5.value)*1;
+    var s6=(sub6.value)*1;
+    var s7=(sub7.value)*1;
+    var avg=(s1+s2+s3+s4+s5+s6+s7)/7;
 
-    if (grade.value > 100 ) grade = notExist;
-    else if (grade.value >= 90) grade = Outstanding;
-    else if (grade.value >= 85) grade = Very;
-    else if (grade.value >= 80) grade = Satisfactory;
-    else if (grade.value >= 75) grade = Fairly;
-    else if (grade.value < 75 ) grade = Failed;
+    document.getElementById("name1").innerHTML="Average = " + avg;
 
-    message.innerHTML = grade;
+    if (avg < 75) {
+        document.getElementById("name2").innerHTML = "REMARKS: Failed!";
+        document.getElementById("description").innerHTML = "DESCRIPTOR: DID NOT MEET EXPECTATION";
+    } else if (avg >= 75 && avg <= 79) {
+        document.getElementById("name2").innerHTML = "REMARKS: Passed!";
+        document.getElementById("description").innerHTML = "DESCRIPTOR: FAIRLY SATISFACTORY";
+    } else if (avg >= 80 && avg <= 84) {
+        document.getElementById("name2").innerHTML = "REMARKS: Passed!";
+        document.getElementById("description").innerHTML = "DESCRIPTOR: SATISFACTORY";
+    } else if (avg >= 85 && avg <= 89) {
+        document.getElementById("name2").innerHTML = "REMARKS: Passed!";
+        document.getElementById("description").innerHTML = "DESCRIPTOR: VERY SATISFACTORY";
+    } else if (avg >= 90 && avg <= 100) {
+        document.getElementById("name2").innerHTML = "REMARKS: Passed!";
+        document.getElementById("description").innerHTML = "DESCRIPTOR: OUTSTANDING";
+    } else {
+        document.getElementById("name2").innerHTML = "REMARKS: DOES NOT EXIST";
+        document.getElementById("description").innerHTML = "";
+    }
 }

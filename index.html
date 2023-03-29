@@ -1,21 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Grading System Activity</title>
     <style>
-        body{
-            background-color:lightgray;
-            text-align: center;
-            background-image: linear-gradient(to right, rgb(255, 207, 207) , rgb(124, 193, 240));
-        }
-    </style>
-</head>
-<script type="text/javascript" src="script.js"></script>
-<body>
-        <h1>Enter your grade</h1>
-        <input id="grade">
-        <button id="button" onclick="displaygrade()">Check Remarks</button>
-        <h2 id="message"></h2>
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      
+      }
 
-</body>
+      input { 
+        text-align: center; 
+      }
+
+      body {
+        text-align: center;
+        background-image: linear-gradient(
+          to right,
+          rgb(255, 207, 207),
+          rgb(124, 193, 240)
+        );
+      }
+
+      .Container {
+        text-align: justify;
+        justify-content: center;
+        margin: 40px 600px;
+      }
+
+      .Texts {
+        text-align: center;
+        position: absolute;
+        top: 600px;
+        left: 540px;
+        border-style: solid;
+      }
+    </style>
+  </head>
+  <script type="text/javascript" src="script.js"></script>
+  <body>
+    <h1>GRADING SYSTEM</h1>
+    <div class="Container">
+      <br />
+      English
+      <input type="number" id="sub1" />
+      <br /><br />
+      Math
+      <input type="number" id="sub2" />
+      <br /><br />
+      Science
+      <input type="number" id="sub3" />
+      <br /><br />
+      Rizal
+      <input type="number" id="sub4" />
+      <br /><br />
+      Web
+      <input type="number" id="sub5" />
+      <br /><br />
+      SIA
+      <input type="number" id="sub6" />
+      <br /><br />
+      PE
+      <input type="number" id="sub7" />
+      <br /><br />
+    </div>
+
+    <button onclick="clr()">CLEAR</button>
+    <button onclick="ok()" ondblclick="document.getElementsByTagName('body').style.color=linear-gradient;">OK</button>
+
+    <div class="Texts">
+      <p id="name1"></p>
+      <p id="name2"></p>
+      <p id="description"></p>
+    </div>
+  </body>
 </html>
